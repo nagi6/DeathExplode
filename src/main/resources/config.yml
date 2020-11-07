@@ -1,0 +1,6 @@
+power: 4.0
+fire: false
+breakblock: true
+player: true
+mob: true
+item: false

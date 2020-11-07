@@ -1,0 +1,6 @@
+name: DeathExplode
+version: ${project.version}
+main: nagi.mcje.deathexplode.Main
+api-version: 1.13
+load: STARTUP
+authors: [Nagi]
