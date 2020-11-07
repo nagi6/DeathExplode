@@ -3,7 +3,6 @@ package nagi.mcje.deathexplode;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Mob;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -16,7 +15,7 @@ public final class Main extends JavaPlugin implements Listener{
     public float power; //爆発の強さ
     public boolean fire;    //爆発時の着火
     public boolean breakblock;  //爆発時のブロック破壊
-    public boolean player, mob, item;
+    public boolean player, mob;
 
     @Override
     public void onEnable(){
@@ -28,7 +27,6 @@ public final class Main extends JavaPlugin implements Listener{
         breakblock = config.getBoolean("breakblock");
         player = config.getBoolean("player");
         mob = config.getBoolean("mob");
-        item = config.getBoolean("item");
     }
 
     @EventHandler
@@ -38,7 +36,6 @@ public final class Main extends JavaPlugin implements Listener{
         Boolean explosion = false;
         if(entity instanceof Player && player) explosion = true;
         else if(entity instanceof Mob && mob) explosion = true;
-        else if(entity instanceof Item && item) explosion = true;
         if(explosion) loc.getWorld().createExplosion(loc, power, fire, breakblock);
     }
 }
