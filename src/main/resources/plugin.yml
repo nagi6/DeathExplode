@@ -4,3 +4,8 @@ main: nagi.mcje.deathexplode.Main
 api-version: 1.13
 load: STARTUP
 authors: [Nagi]
+commands:
+ de:
+  description: DeathExplode
+  usage: /de <power|fire|break|player|mob|settings>
+  default: op
